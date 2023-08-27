@@ -1,0 +1,13 @@
+{
+  "name": "list",
+  "version": "0.4.1",
+  "license": "MIT",
+  "repo": "clibs/list",
+  "keywords": ["list", "structure"],
+  "src": [
+    "list_iterator.c",
+    "list.c",
+    "list_node.c",
+    "list.h"
+  ]
+}

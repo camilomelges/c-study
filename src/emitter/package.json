@@ -1,0 +1,17 @@
+{
+  "name": "emitter",
+  "version": "0.3.0",
+  "license": "MIT",
+  "repo": "stephenmathieson/emitter.c",
+  "keywords": ["emitter"],
+  "src": [
+    "emitter.c",
+    "emitter.h"
+  ],
+  "dependencies": {
+    "list": "*"
+  },
+  "development": {
+    "wildcardcmp": "*"
+  }
+}

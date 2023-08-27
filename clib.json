@@ -1,0 +1,11 @@
+{
+  "name": "device-c",
+  "version": "0.1.0",
+  "repo": "devices/device-c",
+  "install": "make clean uninstall build install",
+  "src": [
+    "src/main.c",
+    "src/**",
+    "src/emitter/emitter.h"
+  ]
+}

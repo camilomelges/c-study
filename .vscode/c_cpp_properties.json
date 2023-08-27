@@ -1,0 +1,47 @@
+{
+    "configurations": [
+        {
+            "name": "windows-gcc-x64",
+            "includePath": [
+                "c:/Users/milo/Desktop/device-c/**",
+                "c:/Users/milo/Desktop/device-c/src/**/*"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:/ProgramData/chocolatey/bin/gcc.exe",
+            "intelliSenseMode": "windows-gcc-x64",
+            "mergeConfigurations": true,
+            "browse": {
+                "path": [
+                    "c:/Users/milo/Desktop/device-c/**",
+                    "c:/Users/milo/Desktop/device-c/src/**",
+                    "c:/Users/milo/Desktop/device-c/src/emitter/**",
+                    "${workspaceFolder}"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "cStandard": "c23",
+            "cppStandard": "c++23"
+        },
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "Z:\\usr\\bin\\gcc",
+            "intelliSenseMode": "linux-gcc-x64",
+            "cStandard": "c23",
+            "cppStandard": "c++23",
+            "mergeConfigurations": true
+        }
+    ],
+    "version": 4
+}

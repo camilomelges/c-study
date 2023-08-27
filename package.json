@@ -1,0 +1,18 @@
+{
+  "name": "device-c",
+  "version": "0.1.0",
+  "install": "make clean install",
+  "dependencies": {
+    "emitter": "~0.3.0",
+    "list": "*",
+    "time": "*"
+  },
+  "scripts": {
+    "create-libs": "bash -c 'mkdir -p ./src/libs'",
+    "copy-headers": "bash -c \"cp -rf \\$(find ./src | grep -e '.*\\.c$' -e '.*\\.h$') ./src/libs\"",
+    "generate-lib": "cd ./src/libs && bash -c \"gcc -c *.c && ar rcs lib.a *.o && rm -rf *.o\"",
+    "compile": "cd ./src/libs && bash -c 'gcc -fdiagnostics-color=always main.c -I. -L. -l:lib.a -o ../../device-c'",
+    "clean-libs": "bash -c 'rm -rf ./src/libs'",
+    "build": "npm run clean-libs && npm run create-libs && npm run copy-headers && npm run generate-lib && npm run compile && npm run clean-libs"
+  }
+}
