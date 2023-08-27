@@ -8,11 +8,23 @@
     "time": "*"
   },
   "scripts": {
-    "create-libs": "bash -c 'mkdir -p ./src/libs'",
-    "copy-headers": "bash -c \"cp -rf \\$(find ./src | grep -e '.*\\.c$' -e '.*\\.h$') ./src/libs\"",
-    "generate-lib": "cd ./src/libs && bash -c \"gcc -c *.c && ar rcs lib.a *.o && rm -rf *.o\"",
-    "compile": "cd ./src/libs && bash -c 'gcc -fdiagnostics-color=always main.c -I. -L. -l:lib.a -o ../../device-c'",
-    "clean-libs": "bash -c 'rm -rf ./src/libs'",
-    "build": "npm run clean-libs && npm run create-libs && npm run copy-headers && npm run generate-lib && npm run compile && npm run clean-libs"
+    "clean-libs": "bash -c 'rm -rf ./dist'",
+    "create-libs": "bash -c 'mkdir -p ./dist'",
+    "copy-src": "bash -c \"cp -rf \\$(find ./src | grep -e '.*\\.c$' -e '.*\\.h$') ./dist\"",
+    "copy-test": "bash -c \"cp -rf \\$(find ./test | grep -e '.*\\.c$' -e '.*\\.h$') ./dist\"",
+    "generate-lib": "cd ./dist && bash -c \"gcc -c *.c && rm -rf main.o && ar rcs lib.a *.o && rm -rf *.o\"",
+    "generate-tests": "cd ./dist && bash -c 'gcc -fdiagnostics-color=always sensor-listener-test.c -I. -L. -l:lib.a -o test'",
+    "run-tests": "bash -c \"ps -p $$ && ./dist/test\"",
+    "compile": "cd ./dist && bash -c 'gcc -fdiagnostics-color=always main.c -I. -L. -l:lib.a -o app'",
+    "test": "npm run clean-libs && npm run create-libs && npm run copy-src && npm run copy-test && npm run generate-lib && npm run generate-tests && npm run run-tests",
+    "build": "npm run clean-libs && npm run create-libs && npm run copy-src && npm run copy-test && npm run generate-lib && npm run compile",
+    
+    "windows-clean-libs": "rm dist",
+    "windows-create-libs": "md dist",
+    "windows-copy-src": "xcopy /c /s /y /a .\\src\\ .\\dist\\",
+    "windows-copy-test": "xcopy /c /s /y /a .\\test\\ .\\dist\\",
+    "windows-generate-lib": "cd ./dist & gcc.exe -c *.c & rm main.o & ar rcs lib.a *.o & rm *.o",
+    "windows-compile": "cd ./dist & gcc.exe -fdiagnostics-color=always main.c -I. -L. -l:lib.a -o app.exe -v",
+    "windows-build": "npm run windows-clean-libs & npm run windows-create-libs & npm run windows-copy-headers & npm run windows-generate-lib & npm run windows-compile"
   }
 }

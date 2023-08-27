@@ -8,12 +8,12 @@
       "args": [
         "-fdiagnostics-color=always",
         "-g",
-        "${file}",
-        "-I${workspaceFolder}\\src\\libs",
-        "-L${workspaceFolder}\\src\\libs",
+        "${workspaceFolder}\\dist\\sensor-listener-test.c",
+        "-I${workspaceFolder}\\dist",
+        "-L${workspaceFolder}\\dist",
         "-l:lib.a",
         "-o",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        "${workspaceFolder}\\dist\\test.exe"
       ],
       "options": {
         "cwd": "Z:\\usr\\bin"

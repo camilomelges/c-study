@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "repo": "devices/device-c",
   "install": "make clean uninstall build install",
+  "keywords": [
+    "device-c"
+  ],
   "src": [
-    "src/main.c",
-    "src/**",
-    "src/emitter/emitter.h"
+    "src/main.c"
   ]
 }

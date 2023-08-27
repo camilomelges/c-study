@@ -1,13 +1,15 @@
 {
   "configurations": [
     {
-      // "logging": {
-      //   "engineLogging": true
-      // },
+      "logging": {
+        "trace": true,
+        "traceResponse": true,
+        "engineLogging": true
+      },
       "name": "C/C++: gcc build and debug active file",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "program": "${workspaceFolder}\\dist\\test.exe",
       "args": [],
       "stopAtEntry": false,
       "cwd": "Z:\\usr\\bin",
@@ -40,8 +42,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/milo/Desktop/device-c/src",
-      "program": "c:/Users/milo/Desktop/device-c/src/build/Debug/outDebug",
+      "cwd": "c:/Users/milo/Desktop/device-c/dist",
+      "program": "c:/Users/milo/Desktop/device-c/dist/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

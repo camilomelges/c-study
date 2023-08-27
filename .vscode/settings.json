@@ -3,7 +3,15 @@
     "emitter.h": "c",
     "list.h": "c",
     "stdio.h": "c",
-    "time.h": "c"
+    "time.h": "c",
+    "logger.h": "c",
+    "sensor-listener.h": "c",
+    "console-colors.h": "c",
+    "unistd.h": "c",
+    "fcntl.h": "c",
+    "cmath": "c",
+    "string.h": "c",
+    "describe.h": "c"
   },
   "C_Cpp.default.compilerPath": "C:/ProgramData/chocolatey/bin/gcc.exe",
   "C_Cpp_Runner.msvcBatchPath": "",
